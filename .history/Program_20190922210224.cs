@@ -96,7 +96,7 @@ namespace GenerateLADataTable {
                     foreach (var col in columns) {
                         var value = col.Values[i];
 
-                        if (col.Type == DataType.Double || col.Type == DataType.Int || col.Type == DataType.Bool || col.Type == DataType.Datetime) {
+                        if (col.Type == DataType.Double || col.Type == DataType.Int || col.Type == DataType.bool) {
                             if (string.IsNullOrEmpty (value)) {
                                 rowsString += $"{col.Type.ToString().ToLower()}(null),";
                             } else {
@@ -105,8 +105,14 @@ namespace GenerateLADataTable {
                             continue;
                         }
 
-                        rowsString += "'" + value + "',";
-
+                        switch (col.Type) {
+                        case DataType.Datetime:
+                            rowsString += "'" + value + "',";
+                            break;
+                        case DataType.String:
+                            rowsString += "'" + value + "',";
+                            break;
+                        };
                     }
 
                     pbar.Tick ();

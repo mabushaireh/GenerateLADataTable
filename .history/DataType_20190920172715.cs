@@ -6,7 +6,7 @@ namespace GenerateLADataTable {
 
         Double,
 
-        Bool,
+        Boolean,
 
         Unknown
     }

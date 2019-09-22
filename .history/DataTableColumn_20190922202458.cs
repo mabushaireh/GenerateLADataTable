@@ -12,16 +12,29 @@ namespace GenerateLADataTable {
                 if (this._type != DataType.Unknown)
                     return this._type;
 
-                this._type = ParseString (this.Values);
+                if (this.Values.Count > 0) {
+                    for (var i = 0; i < this.Values.Count; i++) {
+                        if (string.IsNullOrEmpty (this.Values[i]))
+                            continue;
+                        else {
+                            this._type = ParseString (this.Values[i]);
+                            return this._type;
+                        }
+                    }
+                    this._type = DataType.String;
+                    return this._type;
+
+                } else
+                    this._type = DataType.String;
+
                 return this._type;
             }
-
         }
 
         public List<string> Values { get; set; }
         public DataTableColumn () => this.Values = new List<string> ();
 
-        public static DataType ParseString (List<string> values) {
+        public static DataType ParseString (string[] values) {
 
             bool boolValue;
             Int32 intValue;
@@ -44,20 +57,23 @@ namespace GenerateLADataTable {
                     return DataType.Datetime;
 
                 if (bool.TryParse (value, out boolValue))
-                    return DataType.Bool;
-
-                else if (Int32.TryParse (value, out intValue)) {
+                    return DataType.Boolean;
+                
+                else if (Int32.TryParse (value, out intValue)){
                     tempDataType = DataType.Int;
                     continue;
-                } else {
+                }
+                
+                else {
                     tempDataType = DataType.String;
                     continue;
                 }
 
+                return tempDataType;
             }
             // Place checks higher in if-else statement to give higher priority to type.
-            return (tempDataType == DataType.Unknown? DataType.String : tempDataType);
 
         }
     }
+
 }

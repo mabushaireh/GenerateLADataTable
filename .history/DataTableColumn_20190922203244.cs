@@ -44,7 +44,7 @@ namespace GenerateLADataTable {
                     return DataType.Datetime;
 
                 if (bool.TryParse (value, out boolValue))
-                    return DataType.Bool;
+                    return DataType.Boolean;
 
                 else if (Int32.TryParse (value, out intValue)) {
                     tempDataType = DataType.Int;

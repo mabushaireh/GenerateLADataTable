@@ -12,7 +12,7 @@ namespace GenerateLADataTable {
                 if (this._type != DataType.Unknown)
                     return this._type;
 
-                this._type = ParseString (this.Values);
+                this._type = ParseString (this.Values[i]);
                 return this._type;
             }
 
@@ -21,7 +21,7 @@ namespace GenerateLADataTable {
         public List<string> Values { get; set; }
         public DataTableColumn () => this.Values = new List<string> ();
 
-        public static DataType ParseString (List<string> values) {
+        public static DataType ParseString (string[] values) {
 
             bool boolValue;
             Int32 intValue;
@@ -44,7 +44,7 @@ namespace GenerateLADataTable {
                     return DataType.Datetime;
 
                 if (bool.TryParse (value, out boolValue))
-                    return DataType.Bool;
+                    return DataType.Boolean;
 
                 else if (Int32.TryParse (value, out intValue)) {
                     tempDataType = DataType.Int;
@@ -56,7 +56,7 @@ namespace GenerateLADataTable {
 
             }
             // Place checks higher in if-else statement to give higher priority to type.
-            return (tempDataType == DataType.Unknown? DataType.String : tempDataType);
+            return tempDataType;
 
         }
     }

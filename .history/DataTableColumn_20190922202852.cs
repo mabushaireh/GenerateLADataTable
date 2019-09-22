@@ -44,7 +44,7 @@ namespace GenerateLADataTable {
                     return DataType.Datetime;
 
                 if (bool.TryParse (value, out boolValue))
-                    return DataType.Bool;
+                    return DataType.Boolean;
 
                 else if (Int32.TryParse (value, out intValue)) {
                     tempDataType = DataType.Int;
@@ -56,7 +56,7 @@ namespace GenerateLADataTable {
 
             }
             // Place checks higher in if-else statement to give higher priority to type.
-            return (tempDataType == DataType.Unknown? DataType.String : tempDataType);
+            return tempDataType;
 
         }
     }

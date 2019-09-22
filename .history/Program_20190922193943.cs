@@ -57,12 +57,13 @@ namespace GenerateLADataTable {
             file.Close ();
             var dataTableName = "Data";
 
-            var has = columns.FirstOrDefault (col => col.ColumnName == "Type");
-            if (has != null) {
+            var has = columns.FirstOrDefault(col => col.ColumnName == "Type");
+            if (has != null)
+            {
                 dataTableName = has.Values[0];
             }
 
-            var datatable = $"let {dataTableName} = datatable (" + appendColumns (columns) + ") [";
+            var datatable = @"let {dataTableName} = datatable (" + appendColumns (columns) + ") [";
             datatable += Environment.NewLine;
             datatable += appendRows (columns);
             datatable += Environment.NewLine;
@@ -71,7 +72,7 @@ namespace GenerateLADataTable {
             datatable += dataTableName;
             Console.WriteLine (datatable);
             // TODO: Save as .kql for Kusto explorer
-            var logPath = filePath.Replace (".csv", ".kql");
+            var logPath = ".\\Query.kql";
             var logFile = System.IO.File.Create (logPath);
             var logWriter = new System.IO.StreamWriter (logFile);
             logWriter.WriteLine (datatable);
@@ -95,18 +96,33 @@ namespace GenerateLADataTable {
 
                     foreach (var col in columns) {
                         var value = col.Values[i];
-
-                        if (col.Type == DataType.Double || col.Type == DataType.Int || col.Type == DataType.Bool || col.Type == DataType.Datetime) {
-                            if (string.IsNullOrEmpty (value)) {
-                                rowsString += $"{col.Type.ToString().ToLower()}(null),";
-                            } else {
-                                rowsString += $"{col.Type.ToString().ToLower()}({value}),";
-                            }
+                        if (string.IsNullOrEmpty (value)) {
+                            rowsString += "'',";
                             continue;
                         }
 
-                        rowsString += "'" + value + "',";
+                        // if (value.Contains ("-")) {
+                        //     rowsString += "'" + value + "',";
+                        //     continue;
+                        // }
 
+                        switch (col.Type) {
+                        case DataType.Boolean:
+                            rowsString += value + ",";
+                            break;
+                        case DataType.Datetime:
+                            rowsString += "'" + value + "',";
+                            break;
+                        case DataType.Double:
+                            rowsString += value + ",";
+                            break;
+                        case DataType.Int:
+                            rowsString += value + ",";
+                            break;
+                        case DataType.String:
+                            rowsString += "'" + value + "',";
+                            break;
+                        };
                     }
 
                     pbar.Tick ();

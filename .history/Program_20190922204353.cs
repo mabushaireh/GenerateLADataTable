@@ -95,18 +95,38 @@ namespace GenerateLADataTable {
 
                     foreach (var col in columns) {
                         var value = col.Values[i];
+                        if (string.IsNullOrEmpty (value)) {
+                            rowsString += "'',";
+                            continue;
+                        }
 
-                        if (col.Type == DataType.Double || col.Type == DataType.Int || col.Type == DataType.Bool || col.Type == DataType.Datetime) {
+                        if (col.Type == DataType.Double || col.Type == DataType.Int) {
                             if (string.IsNullOrEmpty (value)) {
                                 rowsString += $"{col.Type.ToString().ToLower()}(null),";
                             } else {
                                 rowsString += $"{col.Type.ToString().ToLower()}({value}),";
                             }
+
                             continue;
                         }
 
-                        rowsString += "'" + value + "',";
-
+                        switch (col.Type) {
+                        case DataType.Boolean:
+                            rowsString += value + ",";
+                            break;
+                        case DataType.Datetime:
+                            rowsString += "'" + value + "',";
+                            break;
+                        case DataType.Double:
+                            rowsString += value + ",";
+                            break;
+                        case DataType.Int:
+                            rowsString += value + ",";
+                            break;
+                        case DataType.String:
+                            rowsString += "'" + value + "',";
+                            break;
+                        };
                     }
 
                     pbar.Tick ();

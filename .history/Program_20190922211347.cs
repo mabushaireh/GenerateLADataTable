@@ -106,30 +106,30 @@ namespace GenerateLADataTable {
                         }
 
                         rowsString += "'" + value + "',";
-
-                    }
-
-                    pbar.Tick ();
-                    rowsString += Environment.NewLine;
-                    if (rowsString.Length > 2095000)
-                        break;
+                    };
                 }
 
+                pbar.Tick ();
+                rowsString += Environment.NewLine;
+                if (rowsString.Length > 2095000)
+                    break;
             }
 
-            rowsString = rowsString.Substring (0, rowsString.Length - 3);
-            return rowsString;
         }
 
-        private static string appendColumns (List<DataTableColumn> columns) {
-            var colDefinition = "";
-
-            foreach (var col in columns) {
-                colDefinition += $"{col.ColumnName}: {col.Type.ToString().ToLower()},";
-            }
-            colDefinition = colDefinition.Substring (0, colDefinition.Length - 1);
-            return colDefinition;
-        }
-
+        rowsString = rowsString.Substring (0, rowsString.Length - 3);
+        return rowsString;
     }
+
+    private static string appendColumns (List<DataTableColumn> columns) {
+        var colDefinition = "";
+
+        foreach (var col in columns) {
+            colDefinition += $"{col.ColumnName}: {col.Type.ToString().ToLower()},";
+        }
+        colDefinition = colDefinition.Substring (0, colDefinition.Length - 1);
+        return colDefinition;
+    }
+
+}
 }

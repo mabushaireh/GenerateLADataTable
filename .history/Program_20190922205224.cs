@@ -90,13 +90,13 @@ namespace GenerateLADataTable {
                 ProgressBarOnBottom = true
             };
 
-            using (var pbar = new ProgressBar (totalTicks, "progress", options)) {
+            //using (var pbar = new ProgressBar (totalTicks, "progress", options)) {
                 for (var i = 0; i < rowsCount; i++) {
 
                     foreach (var col in columns) {
                         var value = col.Values[i];
 
-                        if (col.Type == DataType.Double || col.Type == DataType.Int || col.Type == DataType.Bool || col.Type == DataType.Datetime) {
+                        if (col.Type == DataType.Double || col.Type == DataType.Int) {
                             if (string.IsNullOrEmpty (value)) {
                                 rowsString += $"{col.Type.ToString().ToLower()}(null),";
                             } else {
@@ -105,17 +105,26 @@ namespace GenerateLADataTable {
                             continue;
                         }
 
-                        rowsString += "'" + value + "',";
-
+                        switch (col.Type) {
+                        case DataType.Boolean:
+                            rowsString += value + ",";
+                            break;
+                        case DataType.Datetime:
+                            rowsString += "'" + value + "',";
+                            break;
+                        case DataType.String:
+                            rowsString += "'" + value + "',";
+                            break;
+                        };
                     }
 
-                    pbar.Tick ();
+                    //pbar.Tick ();
                     rowsString += Environment.NewLine;
                     if (rowsString.Length > 2095000)
                         break;
                 }
 
-            }
+            //}
 
             rowsString = rowsString.Substring (0, rowsString.Length - 3);
             return rowsString;
