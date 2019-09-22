@@ -1,0 +1,14 @@
+d:\Source Code\Repos\GenerateLADataTable\bin\Debug\netcoreapp2.1\win10-x64\hostpolicy.dll
+d:\Source Code\Repos\GenerateLADataTable\bin\Debug\netcoreapp2.1\win10-x64\hostfxr.dll
+d:\Source Code\Repos\GenerateLADataTable\bin\Debug\netcoreapp2.1\win10-x64\GenerateLADataTable.exe
+D:\Source Code\Repos\GenerateLADataTable\bin\Debug\netcoreapp2.1\win10-x64\GenerateLADataTable.deps.json
+D:\Source Code\Repos\GenerateLADataTable\bin\Debug\netcoreapp2.1\win10-x64\GenerateLADataTable.runtimeconfig.json
+D:\Source Code\Repos\GenerateLADataTable\bin\Debug\netcoreapp2.1\win10-x64\GenerateLADataTable.runtimeconfig.dev.json
+d:\Source Code\Repos\GenerateLADataTable\bin\Debug\netcoreapp2.1\win10-x64\GenerateLADataTable.dll
+d:\Source Code\Repos\GenerateLADataTable\bin\Debug\netcoreapp2.1\win10-x64\GenerateLADataTable.pdb
+d:\Source Code\Repos\GenerateLADataTable\obj\Debug\netcoreapp2.1\win10-x64\GenerateLADataTable.csprojAssemblyReference.cache
+d:\Source Code\Repos\GenerateLADataTable\obj\Debug\netcoreapp2.1\win10-x64\GenerateLADataTable.csproj.CoreCompileInputs.cache
+d:\Source Code\Repos\GenerateLADataTable\obj\Debug\netcoreapp2.1\win10-x64\GenerateLADataTable.AssemblyInfoInputs.cache
+d:\Source Code\Repos\GenerateLADataTable\obj\Debug\netcoreapp2.1\win10-x64\GenerateLADataTable.AssemblyInfo.cs
+d:\Source Code\Repos\GenerateLADataTable\obj\Debug\netcoreapp2.1\win10-x64\GenerateLADataTable.dll
+d:\Source Code\Repos\GenerateLADataTable\obj\Debug\netcoreapp2.1\win10-x64\GenerateLADataTable.pdb

@@ -1,0 +1,77 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Source Code\\Repos\\GenerateLADataTable\\GenerateLADataTable.csproj": {}
+  },
+  "projects": {
+    "D:\\Source Code\\Repos\\GenerateLADataTable\\GenerateLADataTable.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Source Code\\Repos\\GenerateLADataTable\\GenerateLADataTable.csproj",
+        "projectName": "GenerateLADataTable",
+        "projectPath": "D:\\Source Code\\Repos\\GenerateLADataTable\\GenerateLADataTable.csproj",
+        "packagesPath": "C:\\Users\\maabusha\\.nuget\\packages\\",
+        "outputPath": "D:\\Source Code\\Repos\\GenerateLADataTable\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\maabusha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/aspnet-contrib/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "(, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.12, )",
+              "autoReferenced": true
+            },
+            "ShellProgressBar": {
+              "target": "Package",
+              "version": "(, )"
+            },
+            "TextCopy": {
+              "target": "Package",
+              "version": "(, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      },
+      "runtimes": {
+        "win10-x64": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

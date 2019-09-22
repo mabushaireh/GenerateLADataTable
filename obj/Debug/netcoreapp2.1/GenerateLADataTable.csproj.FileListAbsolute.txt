@@ -1,0 +1,11 @@
+D:\Source Code\Repos\GenerateLADataTable\bin\Debug\netcoreapp2.1\GenerateLADataTable.deps.json
+D:\Source Code\Repos\GenerateLADataTable\bin\Debug\netcoreapp2.1\GenerateLADataTable.runtimeconfig.json
+D:\Source Code\Repos\GenerateLADataTable\bin\Debug\netcoreapp2.1\GenerateLADataTable.runtimeconfig.dev.json
+d:\Source Code\Repos\GenerateLADataTable\bin\Debug\netcoreapp2.1\GenerateLADataTable.dll
+d:\Source Code\Repos\GenerateLADataTable\bin\Debug\netcoreapp2.1\GenerateLADataTable.pdb
+d:\Source Code\Repos\GenerateLADataTable\obj\Debug\netcoreapp2.1\GenerateLADataTable.csprojAssemblyReference.cache
+d:\Source Code\Repos\GenerateLADataTable\obj\Debug\netcoreapp2.1\GenerateLADataTable.csproj.CoreCompileInputs.cache
+d:\Source Code\Repos\GenerateLADataTable\obj\Debug\netcoreapp2.1\GenerateLADataTable.AssemblyInfoInputs.cache
+d:\Source Code\Repos\GenerateLADataTable\obj\Debug\netcoreapp2.1\GenerateLADataTable.AssemblyInfo.cs
+d:\Source Code\Repos\GenerateLADataTable\obj\Debug\netcoreapp2.1\GenerateLADataTable.dll
+d:\Source Code\Repos\GenerateLADataTable\obj\Debug\netcoreapp2.1\GenerateLADataTable.pdb

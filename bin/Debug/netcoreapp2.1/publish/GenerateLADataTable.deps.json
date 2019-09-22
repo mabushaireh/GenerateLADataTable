@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.1",
+    "signature": "6ba942cb99d26b29fb09cad390e3887c0799cd95"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.1": {
+      "GenerateLADataTable/1.0.0": {
+        "dependencies": {
+          "TextCopy": "1.7.1"
+        },
+        "runtime": {
+          "GenerateLADataTable.dll": {}
+        }
+      },
+      "TextCopy/1.7.1": {
+        "runtime": {
+          "lib/netstandard2.0/TextCopy.dll": {
+            "assemblyVersion": "1.7.1.0",
+            "fileVersion": "1.7.1.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GenerateLADataTable/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TextCopy/1.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-g19RdQXxp5zeR2WJ16tMXBxYvHuNLUqGuM2B6pSOikhk+l6ESdCbyhWPMGfxPx+I1w796HBvV6Pjm8ujBPvOsQ==",
+      "path": "textcopy/1.7.1",
+      "hashPath": "textcopy.1.7.1.nupkg.sha512"
+    }
+  }
+}
